@@ -1,1 +1,9 @@
-<p>card-form works!</p>
+<form [formGroup]="cardForm">
+  <input formControlName="name" />
+  <input formControlName="number" />
+  <input formControlName="exp" />
+  <input formControlName="cvc" />
+</form>
+
+<div>form content: {{ cardForm.value | json }}</div>
+<div>form is valid: {{ cardForm.valid }}</div>
