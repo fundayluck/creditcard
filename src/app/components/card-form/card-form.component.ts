@@ -1,6 +1,12 @@
 import { JsonPipe } from '@angular/common';
 import { Component } from '@angular/core';
-import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import {
+  FormControl,
+  FormGroup,
+  ReactiveFormsModule,
+  Validator,
+  Validators,
+} from '@angular/forms';
 
 @Component({
   selector: 'app-card-form',
@@ -11,7 +17,7 @@ import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 })
 export class CardFormComponent {
   cardForm = new FormGroup({
-    name: new FormControl(''),
+    name: new FormControl('', [Validators.required, Validators.minLength(3)]),
     number: new FormControl(''),
     exp: new FormControl(''),
     cvc: new FormControl(''),
