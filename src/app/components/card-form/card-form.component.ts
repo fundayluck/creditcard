@@ -4,10 +4,10 @@ import {
   FormControl,
   FormGroup,
   ReactiveFormsModule,
-  Validator,
   Validators,
 } from '@angular/forms';
 import { InputComponent } from '../../shared/input/input.component';
+import { DateFormControl } from '../../date-form-control';
 
 @Component({
   selector: 'app-card-form',
@@ -24,7 +24,7 @@ export class CardFormComponent {
       Validators.minLength(16),
       Validators.maxLength(16),
     ]),
-    expiration: new FormControl('', [
+    expiration: new DateFormControl('', [
       Validators.required,
       Validators.pattern(/^(0[1-9]|1[1-9])\/\d{2}$/),
     ]),
