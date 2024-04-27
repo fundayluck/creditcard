@@ -19,8 +19,8 @@ import { InputComponent } from '../../shared/input/input.component';
 export class CardFormComponent {
   cardForm = new FormGroup({
     name: new FormControl('', [Validators.required, Validators.minLength(3)]),
-    number: new FormControl(''),
-    exp: new FormControl(''),
-    cvc: new FormControl(''),
+    cardNumber: new FormControl(''),
+    expiration: new FormControl(''),
+    securityCode: new FormControl(''),
   });
 }
