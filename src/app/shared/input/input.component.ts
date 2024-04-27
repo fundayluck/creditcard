@@ -12,6 +12,7 @@ import { FormControl, ReactiveFormsModule } from '@angular/forms';
 export class InputComponent {
   @Input() control!: FormControl;
   @Input() label!: string;
+  @Input() placeholder!: string;
 
   showErrors() {
     const { dirty, touched, errors } = this.control;
