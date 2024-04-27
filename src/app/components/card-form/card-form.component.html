@@ -1,8 +1,8 @@
 <form [formGroup]="cardForm">
-  <app-input [control]="cardForm.controls.name"></app-input>
-  <app-input [control]="cardForm.controls.number"></app-input>
-  <app-input [control]="cardForm.controls.exp"></app-input>
-  <app-input [control]="cardForm.controls.cvc"></app-input>
+  <app-input label="Name" [control]="cardForm.controls.name"></app-input>
+  <app-input label="Number" [control]="cardForm.controls.number"></app-input>
+  <app-input label="Exp" [control]="cardForm.controls.exp"></app-input>
+  <app-input label="CVC" [control]="cardForm.controls.cvc"></app-input>
 </form>
 
 <div>form content: {{ cardForm.value | json }}</div>
