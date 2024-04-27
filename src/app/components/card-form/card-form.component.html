@@ -9,26 +9,32 @@
     [control]="cardForm.controls.cardNumber"
     placeholder="Enter Card Number e.g 1234 1234 1234 1234"
   ></app-input>
-  <app-input
-    label="Expiration"
-    [control]="cardForm.controls.expiration"
-    placeholder="Enter Expiration e.g MM/YY"
-  ></app-input>
-  <app-input
-    label="Security Code"
-    placeholder="Security code"
-    [control]="cardForm.controls.securityCode"
-  ></app-input>
-  <button class="button is-primary" [disabled]="cardForm.invalid" type="submit">
-    Submit
-  </button>
-  <button class="button is-warning" type="button" (click)="onResetClick()">
-    Reset
-  </button>
+  <div class="columns">
+    <div class="column">
+      <app-input
+        label="Expiration"
+        [control]="cardForm.controls.expiration"
+        placeholder="Enter Expiration e.g MM/YY"
+      ></app-input>
+    </div>
+    <div class="column">
+      <app-input
+        label="Security Code"
+        placeholder="Security code"
+        [control]="cardForm.controls.securityCode"
+      ></app-input>
+    </div>
+  </div>
+  <div class="buttons">
+    <button
+      class="button is-primary"
+      [disabled]="cardForm.invalid"
+      type="submit"
+    >
+      Submit
+    </button>
+    <button class="button is-warning" type="button" (click)="onResetClick()">
+      Reset
+    </button>
+  </div>
 </form>
-
-<br />
-
-<div>form content: {{ cardForm.value | json }}</div>
-<div>form is valid: {{ cardForm.valid }}</div>
-<div>Errors around name{{ cardForm.controls.name.errors | json }}</div>
