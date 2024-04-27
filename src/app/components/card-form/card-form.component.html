@@ -1,40 +1,55 @@
-<form [formGroup]="cardForm" (ngSubmit)="onSubmit()">
-  <app-input
-    label="Name"
-    placeholder="Enter Name e.g John Doe"
-    [control]="cardForm.controls.name"
-  ></app-input>
-  <app-input
-    label="Card Number"
-    [control]="cardForm.controls.cardNumber"
-    placeholder="Enter Card Number e.g 1234 1234 1234 1234"
-  ></app-input>
-  <div class="columns">
-    <div class="column">
-      <app-input
-        label="Expiration"
-        [control]="cardForm.controls.expiration"
-        placeholder="Enter Expiration e.g MM/YY"
-      ></app-input>
-    </div>
-    <div class="column">
-      <app-input
-        label="Security Code"
-        placeholder="Security code"
-        [control]="cardForm.controls.securityCode"
-      ></app-input>
-    </div>
+<div class="columns">
+  <div class="column">
+    <app-card
+      [name]="cardForm.controls.name.value"
+      [cardNumber]="cardForm.controls.cardNumber.value"
+      [expiration]="cardForm.controls.expiration.value"
+    ></app-card>
   </div>
-  <div class="buttons">
-    <button
-      class="button is-primary"
-      [disabled]="cardForm.invalid"
-      type="submit"
-    >
-      Submit
-    </button>
-    <button class="button is-warning" type="button" (click)="onResetClick()">
-      Reset
-    </button>
+  <div class="column">
+    <form [formGroup]="cardForm" (ngSubmit)="onSubmit()">
+      <app-input
+        label="Name"
+        placeholder="Enter Name e.g John Doe"
+        [control]="cardForm.controls.name"
+      ></app-input>
+      <app-input
+        label="Card Number"
+        [control]="cardForm.controls.cardNumber"
+        placeholder="Enter Card Number e.g 1234 1234 1234 1234"
+      ></app-input>
+      <div class="columns">
+        <div class="column">
+          <app-input
+            label="Expiration"
+            [control]="cardForm.controls.expiration"
+            placeholder="Enter Expiration e.g MM/YY"
+          ></app-input>
+        </div>
+        <div class="column">
+          <app-input
+            label="Security Code"
+            placeholder="Security code"
+            [control]="cardForm.controls.securityCode"
+          ></app-input>
+        </div>
+      </div>
+      <div class="buttons">
+        <button
+          class="button is-primary"
+          [disabled]="cardForm.invalid"
+          type="submit"
+        >
+          Submit
+        </button>
+        <button
+          class="button is-warning"
+          type="button"
+          (click)="onResetClick()"
+        >
+          Reset
+        </button>
+      </div>
+    </form>
   </div>
-</form>
+</div>

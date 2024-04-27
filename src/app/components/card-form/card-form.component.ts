@@ -7,12 +7,19 @@ import {
   Validators,
 } from '@angular/forms';
 import { InputComponent } from '../../shared/input/input.component';
-import { DateFormControl } from '../../date-form-control';
+import { DateFormControl } from '../../shared/dateFormControl/date-form-control';
+import { CardComponent } from '../card/card.component';
 
 @Component({
   selector: 'app-card-form',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, JsonPipe, InputComponent],
+  imports: [
+    CardComponent,
+    CommonModule,
+    ReactiveFormsModule,
+    JsonPipe,
+    InputComponent,
+  ],
   templateUrl: './card-form.component.html',
   styleUrl: './card-form.component.css',
 })
