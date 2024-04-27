@@ -6,8 +6,7 @@ import { NgxMaskDirective, provideNgxMask } from 'ngx-mask';
 @Component({
   selector: 'app-input',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, NgxMaskDirective],
-  providers: [provideNgxMask()],
+  imports: [CommonModule, ReactiveFormsModule],
   templateUrl: './input.component.html',
   styleUrl: './input.component.css',
 })
