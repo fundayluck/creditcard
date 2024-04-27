@@ -11,7 +11,7 @@
   </div>
   <ng-container *ngIf="showErrors()">
     <div class="help is-danger" *ngIf="control.errors?.['required']">
-      Name is required
+      {{ label }} is required
     </div>
     <div class="help is-danger" *ngIf="control.errors?.['minlength']">
       value you entered is
