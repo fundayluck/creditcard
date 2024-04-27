@@ -23,4 +23,8 @@ export class CardFormComponent {
     expiration: new FormControl(''),
     securityCode: new FormControl(''),
   });
+
+  onSubmit() {
+    console.log('form was submitted');
+  }
 }
